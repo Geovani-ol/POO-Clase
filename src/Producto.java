@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Producto {
 
     public int id;
@@ -6,9 +8,10 @@ public class Producto {
     public String descripcion;
     public String categoria;
     public int stock;
+    public Random random = new Random();
 
-    public Producto(int id, String nombre, Double precio, String descripcion, String categoria, int stock) {
-        this.id = id;
+    public Producto( String nombre, Double precio, String descripcion, String categoria, int stock) {
+        this.id = this.random.nextInt(1, 10001);
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;

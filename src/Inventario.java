@@ -23,8 +23,15 @@ public class Inventario {
     public void mostrarProductos() {
         System.out.println("\n** PRODUCTOS EN EL SISTEMA **");
 
-        for (Producto producto : this.listaPoductos) {
-            System.out.println(producto.mostrarProductos());
+        if (this.listaPoductos.size() == 0){
+            System.out.println("\nNo esxiste productos registrados");
+        } else {
+
+            for (Producto producto : this.listaPoductos) {
+                System.out.println(producto.mostrarProductos());
+            }
+
         }
+
     }
 }

@@ -1,22 +1,76 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
         Inventario inventario = new Inventario();
+        int opcion = 0;
 
-        Producto producto1 = new Producto(1, "Iphone 16 Pro Max", 31000.00, "Nuevo Iphone", "Iphone", 15);
-        Producto producto2 = new Producto(2, "Iphone 15 Pro Max", 28000.00, "Antiguo Iphone", "Iphone", 250);
-        Producto producto3 = new Producto(3, "Iphone 14 Pro Max", 21000.00, "Antiguo Iphone", "Iphone", 500);
+        while (opcion != 4) {
+            System.out.println("\n*** BIENVENIDO ***");
+            System.out.println("1.- Registrar Productos");
+            System.out.println("2.- Eliminar Producto");
+            System.out.println("3.- Mostrar Productos");
+            System.out.println("4.- Salir");
 
-        inventario.registrarProductos(producto1);
-        inventario.registrarProductos(producto2);
-        inventario.registrarProductos(producto3);
+            System.out.print("Selecciona una opción: ");
+            opcion = scanner.nextInt();
 
-        inventario.mostrarProductos();
+            scanner.nextLine();
 
-        inventario.eliminarProducto(3);
+            switch (opcion){
 
-        inventario.mostrarProductos();
+                case 1:
+                    System.out.println("\nSeleccionaste la opción para registrar un producto");
+
+                    System.out.print("\nIngresa el Nombre del producto: ");
+                    String nombre = scanner.nextLine();
+
+                    scanner.nextLine();
+
+                    System.out.print("\nIngresa el Precio del producto: ");
+                    Double precio = scanner.nextDouble();
+
+                    scanner.nextLine();
+
+                    System.out.print("\nIngresa la Descrippción del producto: ");
+                    String descipcion = scanner.nextLine();
+
+                    scanner.nextLine();
+
+                    System.out.print("\nIngresa el Categoría del producto: ");
+                    String categoria = scanner.nextLine();
+
+                    scanner.nextLine();
+
+                    System.out.print("\nIngresa el Stock del producto: ");
+                    int stock = scanner.nextInt();
+
+                    Producto producto = new Producto(nombre,precio, descipcion, categoria, stock);
+                    inventario.registrarProductos(producto);
+
+                    break;
+
+                case 2:
+                    System.out.println("\nSeleccionaste la opción para eliminar un producto");
+
+                    System.out.print("\nIngresa el ID del producto:");
+                    int id = scanner.nextInt();
+
+                    break;
+
+                case 3:
+                    inventario.mostrarProductos();
+                    break;
+
+                case 4:
+                    System.out.println("\nHata luego");
+                    return;
+
+            }
+        }
 
     }
 
