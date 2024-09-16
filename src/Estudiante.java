@@ -17,9 +17,9 @@ public class Estudiante {
     }
 
     public void mostrarInformacion() {
-        System.out.println("Nombre del estudiante: " + nombre + " | ID: " + idEstudiante);
+        System.out.println("Nombre del estudiante: " + getNombre() + " | ID: " + getIdEstudiante());
         System.out.println("Cursos inscritos:");
-        for (Curso curso : cursos) {
+        for (Curso curso : getCursos()) {
             curso.mostrarInfoCurso();
         }
         System.out.println();
@@ -29,24 +29,12 @@ public class Estudiante {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getIdEstudiante() {
         return idEstudiante;
     }
 
-    public void setIdEstudiante(String idEstudiante) {
-        this.idEstudiante = idEstudiante;
-    }
-
     public ArrayList<Curso> getCursos() {
         return cursos;
-    }
-
-    public void setCursos(ArrayList<Curso> cursos) {
-        this.cursos = cursos;
     }
 
 }
