@@ -6,16 +6,16 @@ public class Producto {
     public String nombre;
     public Double precio;
     public String descripcion;
-    public String categoria;
+    public int idCategoria;
     public int stock;
     public Random random = new Random();
 
-    public Producto( String nombre, Double precio, String descripcion, String categoria, int stock) {
+    public Producto( String nombre, Double precio, String descripcion, int idCategoria, int stock) {
         this.id = this.random.nextInt(1, 10001);
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
-        this.categoria = categoria;
+        this.idCategoria = idCategoria;
         this.stock = stock;
     }
 
@@ -36,8 +36,8 @@ public class Producto {
         return descripcion;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
     public int getStock() {
@@ -46,13 +46,13 @@ public class Producto {
 
     public String mostrarProductos() {
         // d - enteros s - string f - double
-        return String.format("Id: %d, Nombre: %s, Precio: %f, Descripcion: %s, Categoria: %s, Stock: %d",
-                id,
-                nombre,
-                precio,
-                descripcion,
-                categoria,
-                stock);
+        return String.format("Id: %d  |  Nombre: %s  |  Precio: %f  |  Descripcion: %s  |  ID Categoria: %d  |  Stock: %d",
+                getId(),
+                getNombre(),
+                getPrecio(),
+                getDescripcion(),
+                getIdCategoria(),
+                getStock());
     }
 
 }
