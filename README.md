@@ -1,7 +1,8 @@
 # Programación Orientada a Objetos (POO)
 
 ## GIF de la Tarea6-Unidad3
-![Tarea6-Unidad3](gif/Tarea6-Unidad3.gif)
+
+![Tarea6/Unidad3](gif/Tarea6-Unidad3.gif)
 
 ### Descripción General
 
