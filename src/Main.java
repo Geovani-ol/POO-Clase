@@ -5,13 +5,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        PagoPaypal pagoPaypal = new PagoPaypal(200, "AS2F1AE3F1DF12", "usuario@email.com");
-        pagoPaypal.procesarPago();
+        EnvioNacional envioNacional = new EnvioNacional(300.0, 6.0, 600);
+        envioNacional.validarPeso();
+        System.out.println(envioNacional.calcularTiempoYCostoEntrega());
 
-        System.out.println("*************************");
+        System.out.println("\n**********************************************\n");
 
-        PagoTarjeta pagoTarjeta = new PagoTarjeta(0, LocalDate.of(2028, 10, 10), "1AS3D1SA3E");
-        pagoTarjeta.procesarPago();
+        EnvioInternacional envioInternacional = new EnvioInternacional(500.0, 12.0, "Fancia");
+        envioInternacional.validarPeso();
+        System.out.println(envioInternacional.calcularTiempoYCostoEntrega());
 
     }
 
